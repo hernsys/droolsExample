@@ -1,0 +1,26 @@
+package com.plugtree.dsrl
+
+import com.plugtree.dslExample.entities.*
+
+expander dslExample.dsl
+
+
+
+rule "expense greater than 1000"
+when
+	There is a customer with expense greater than 1000
+then
+	calculate a 10 percent discount
+end
+
+rule "Customer registered"
+when
+	There is a customer registered
+then
+	calculate a 5 percent discount
+end
+
+function Double getDiscount(Double expense, int discount){
+    return (expense * discount) / 100;
+}
+
