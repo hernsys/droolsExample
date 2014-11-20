@@ -10,11 +10,13 @@ import org.kie.api.runtime.StatelessKieSession;
 //import org.slf4j.LoggerFactory;
 
 
+
+
 import com.plugtree.dslExample.entities.Customer;
 
 
 
-public class DrlExampleTestCase extends BaseTest {
+public class DslrExampleTestCase extends BaseTest {
 	
 	/**
 	 * Customer: Karen 
@@ -29,7 +31,7 @@ public class DrlExampleTestCase extends BaseTest {
 		boolean registered = false;
 		Double expense = 1800D;
 		
-		StatelessKieSession session = TestUtil.createStatelessKieSession(DRL_PATH);
+		StatelessKieSession session = TestUtil.createStatelessKieSession(DSRL_PATH, DSL_PATH);
 		Customer karen = new Customer(KAREN, registered, expense);
         session.execute(Arrays.asList(karen));
 
@@ -50,7 +52,7 @@ public class DrlExampleTestCase extends BaseTest {
 		boolean registered = false;
 		Double expense = 180D;
 		
-		StatelessKieSession session = TestUtil.createStatelessKieSession(DRL_PATH);
+		StatelessKieSession session = TestUtil.createStatelessKieSession(DSRL_PATH, DSL_PATH);
 		Customer mac = new Customer(MAC, registered, expense);
         session.execute(Arrays.asList(mac));
 
@@ -70,12 +72,12 @@ public class DrlExampleTestCase extends BaseTest {
 		boolean registered = true;
 		Double expense = 4000D;
 		
-		StatelessKieSession session = TestUtil.createStatelessKieSession(DRL_PATH);
+		StatelessKieSession session = TestUtil.createStatelessKieSession(DSRL_PATH, DSL_PATH);
 		Customer john = new Customer(JOHN, registered, expense);
         session.execute(Arrays.asList(john));
 
         Assert.assertNotNull(john.getDiscount());
         Assert.assertEquals(600D, john.getDiscount());
 	}
-
+	
 }

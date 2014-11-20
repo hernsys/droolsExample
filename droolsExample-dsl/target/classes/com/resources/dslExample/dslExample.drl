@@ -11,9 +11,9 @@ end
 
 rule "Registered customer"
 when
-	$customer : Customer( registered == true )
+	$customer : Customer( registered == true, expense > 1000)
 then
-	$customer.setDiscount(getDiscount($customer.getExpense(), 5));
+	$customer.setDiscount(getDiscount($customer.getExpense(), 15));
 end
 
 function Double getDiscount(Double expense, int discount){

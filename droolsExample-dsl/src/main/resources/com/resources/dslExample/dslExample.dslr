@@ -8,16 +8,20 @@ expander dslExample.dsl
 
 rule "expense greater than 1000"
 when
-	There is a customer with expense greater than 1000
+	There is a customer
+	-The expense of the customer is greater than 1000
+	-The status of the customer is not registered
 then
-	calculate a 10 percent discount
+	Calculate a 10 percent discount
 end
 
-rule "Customer registered"
+rule "Registered customer and expense greater than 1000"
 when
-	There is a customer registered
+	There is a customer
+	-The expense of the customer is greater than 1000
+	-The status of the customer is registered
 then
-	calculate a 5 percent discount
+	Calculate a 15 percent discount
 end
 
 function Double getDiscount(Double expense, int discount){
