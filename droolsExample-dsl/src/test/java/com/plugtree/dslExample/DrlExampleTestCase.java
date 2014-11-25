@@ -10,9 +10,8 @@ import org.kie.api.runtime.StatelessKieSession;
 
 import com.plugtree.dslExample.entities.Customer;
 
-
-
 public class DrlExampleTestCase extends BaseTest {
+	
 	
 	/**
 	 * Customer: Karen 

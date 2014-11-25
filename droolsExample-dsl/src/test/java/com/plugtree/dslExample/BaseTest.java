@@ -8,5 +8,7 @@ public class BaseTest {
 	protected static final String DSRL_PATH = "com/resources/dslExample/dslExample.dslr";
 	protected static final String DSL_PATH = "com/resources/dslExample/dslExample.dsl";
 	protected static final String DRL_PATH = "com/resources/dslExample/dslExample.drl";
+	
+	protected static final String TEMPLATE_PATH = "/com/resources/dslExample/templates/template.drt";
 
 }

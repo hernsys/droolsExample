@@ -11,6 +11,8 @@
 
   <modules>
     <module>droolsExample-dsl</module>
+    <module>droolsExample-templates</module>
+    <module>droolsExample-guvnor</module>
   </modules>
 
   <properties>

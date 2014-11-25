@@ -1,0 +1,29 @@
+template header
+    positionOrder
+    productCode
+    inclusionOperator
+    rangeValue
+    rangeMaximum
+
+package com.plugtree.dslExample.templateExample;
+
+template "testTemplate"
+
+import org.slf4j.Logger;
+import java.lang.Math;
+import java.math.BigDecimal;
+import java.util.List
+
+
+rule "Test rule_@{row.rowNumber}"
+salience @{positionOrder}
+when
+    There is a RTNG fulfillment
+    -RTNG fulfillment with product code equals @{productCode}
+    RTNG Operation: Variance over @{rangeValue} and score under @{inclusionOperator} @{rangeMaximum}
+ 
+then
+    RTNG log "Placed to Manual Queue."
+end
+
+end template

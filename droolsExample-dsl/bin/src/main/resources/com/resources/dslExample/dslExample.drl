@@ -4,12 +4,12 @@ import com.plugtree.dslExample.entities.*
 
 rule "expense greater than 1000"
 when
-	$customer : Customer( expense > 1000,  registered == false);
+	$customer : Customer( expense > 1000 );
 then
 	$customer.setDiscount(getDiscount($customer.getExpense(), 10));
 end
 
-rule "Registered customer and expense greater than 1000"
+rule "Registered customer"
 when
 	$customer : Customer( registered == true, expense > 1000)
 then
